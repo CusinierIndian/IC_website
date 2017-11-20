@@ -705,7 +705,7 @@ var vid = document.getElementById("bgvid");
 if (window.matchMedia('(prefers-reduced-motion)').matches) {
     vid.removeAttribute("autoplay");
     vid.pause();
-    pauseButton.innerHTML = "Paused";
+    
 }
 
 function vidFade() {
@@ -721,7 +721,7 @@ vidFade();
 }); 
 
 
-pauseButton.addEventListener("click", function() {
+/*pauseButton.addEventListener("click", function() {
   vid.classList.toggle("stopfade");
   if (vid.paused) {
     vid.play();
@@ -730,13 +730,136 @@ pauseButton.addEventListener("click", function() {
     vid.pause();
     pauseButton.innerHTML = "Paused";
   }
-})
+}) */
 
 
 /* for video */
 
 
+var applyForService = function (el){
+	 console.log("apply for service", el);
 
+    $('#service_error').html('');
+
+    var requestData = {}, errMsg = '';
+
+    requestData.bookingfor=$('#service_booking').val();
+    requestData.customerName = $('#service_name').val();
+    requestData.customerEmail = $('#service_email').val();
+    requestData.customerPhone = $('#service_phone_no').val();
+    requestData.pincode = $('#service_pincode').val();
+    requestData.customerLocation = $('#service_location').val();
+    requestData.city = $('#service_city').val();
+    requestData.state = $('#service_state').val();
+    requestData.address = $('#service_address').val();
+    requestData.landmark = $('#service_landmark').val();
+    requestData.alternatePhoneNo = $('#service_alternate_phone_no').val();
+    requestData.cookPreference= $('#cook_preferences').val();
+    requestData.numberOfMembers = $('#no_of_people').val();
+    console.log("form data", requestData);
+
+    if (!requestData.customerName && !requestData.customerEmail && !requestData.customerPhone && !requestData.numberOfMembers && !requestData.pincode && !requestData.address) {
+
+        errMsg = 'All fields are required.';
+
+        $('#service_error').html(errMsg);
+
+    }
+
+    else if (isNaN(requestData.customerPhone) || requestData.customerPhone.length != 10) {
+
+        errMsg = 'Enter valid phone Number.';
+
+        $('#service_error').html(errMsg);
+
+    }
+
+    else if (isNaN(requestData.pincode) || requestData.pincode.length != 6) {
+
+        errMsg = 'Enter valid pincode';
+
+        $('#service_error').html(errMsg);
+
+    }
+
+    else if (requestData.address == "") {
+        errMsg = 'Enter Address';
+
+        $('#service_error').html(errMsg);
+
+    }
+
+    else if (!validateEmail(requestData.customerEmail)) {
+
+        errMsg = 'Enter valid Email Id.';
+
+        $('#service_error').html(errMsg);
+
+    }
+
+    else if (requestData.numberOfMembers < 1) {
+
+        errMsg = 'Enter valid number of people';
+
+        $('#service_error').html(errMsg);
+
+    }
+
+
+
+    else {
+
+        $.ajax({
+
+            url: 'http://127.0.0.1:5000/ic/cookbooking',
+
+            type: 'POST',
+
+            contentType: "application/json; charset=utf-8",
+
+            datatype: 'json',
+
+            crossDomain: true,
+
+            data: JSON.stringify(requestData),
+
+            success: function (data) {
+
+                $('#service-household-modal').modal('hide');
+
+                if (data.notification.code == 200) {
+
+                    console.log("apply successfull")
+
+                    $('#carrer-modal').modal('show');
+
+                }
+
+                else {
+
+                    $('#error-modal').modal('show');
+
+                }
+
+                $('#service_name').val('');
+                $('#service_email').val('');
+                $('#service_phone_no').val('');
+                $('#service_location').val('');
+                $('#cook_preferences').val('');
+                $('#no_of_people').val('');
+                $('#service_address').val('');
+                $('#service_landmark').val('');
+                $('#service_pincode').val('');
+                $('#service_alternate_phone_no').val('');
+            }
+
+        });
+
+    }
+	
+	
+	
+}
 
 
 

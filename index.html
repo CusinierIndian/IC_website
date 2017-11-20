@@ -77,9 +77,9 @@
 
  <section class="mbr-section mbr-section-hero mbr-section-full mbr-section-with-arrow mbr-after-navbar mbr-overlay" style="opacity: 0.6; background-color: rgb(34, 34, 34);" id="home"   data-rv-view="50">
  <div class="mbr-background-video-preview ">
-<video  poster="The_Cucumber.jpg" id="bgvid" playsinline autoplay muted loop>
-<source src="The_Cucumber.webm" type="video/webm">
-<source src="The_Cucumber.mp4" type="video/mp4">
+<video  poster="assets/images/The_Cucumber.jpg" id="bgvid" playsinline autoplay muted loop>
+<source src="assets/images/The_Cucumber.webm" type="video/webm">
+<source src="assets/images/The_Cucumber.mp4" type="video/mp4">
 </video>
 </div>
 
@@ -125,7 +125,7 @@
     <div class="mbr-arrow mbr-arrow-floating" aria-hidden="true"><a href="#whyus"><i class="mbr-arrow-icon"></i></a></div> 
 
 </section>
-<section class="mbr-section mbr-section-hero mbr-section-full mbr-section-with-arrow mbr-after-navbar mbr-overlay" style="opacity: 0.6;  background-image:url(The_Cucumber.jpg);" id="mob-home"    data-rv-view="50">
+<section class="mbr-section mbr-section-hero mbr-section-full mbr-section-with-arrow mbr-after-navbar mbr-overlay" style="opacity: 0.6;  background-image:url(assets/images/The_Cucumber.jpg);" id="mob-home"    data-rv-view="50">
  
 
     <div class="mbr-table-cell">
@@ -348,11 +348,13 @@
               </div>
             
             
-            <div id="service_error"></div>
+          
           </div> 
+		    <div id="service_error"></div>
           <!-- Modal Footer -->
+		   
           <div class="service-footer">
-            <div id="apply_error" class="pull-left"></div>
+           
             <button id="cancel" type="button" class="btn btn-secondary">Cancel</button>
             <button type="submit" class="btn btn-info" onclick="applyForService(this)">Book</button>
           </div>
@@ -413,7 +415,7 @@
             
 </div>
 </section> -->
-<section class="mbr-section" id="career" data-rv-view="181" style="background-image: url(career4.png);padding-top: 72px;padding-bottom: 72px;">
+<section class="mbr-section" id="career" data-rv-view="181" style="background-image: url(assets/images/career4.png);padding-top: 72px;padding-bottom: 72px;">
  <div class="mbr-section mbr-section__container mbr-section__container--middle">
             <div class="container">
                 <div class="row">
@@ -466,10 +468,10 @@
               <input class="form-control form-control-input" type="text" id="apply_phone_no" maxlength="10" placeholder="1234567890"required="true"/> <small id="phnum"class="form-control-feedback-warning">Minimum 10 number
               is required</small>
             </div>
+			<div id="apply_error"></div>
             <div class="career-footer">
-            <div id="apply_error" class="pull-left"></div>
-            <button type="button" class="btn btn-secondary"
-              data-dismiss="modal">Cancel</button>
+            
+            <button type="button" class="btn btn-secondary">Cancel</button>
             <button type="submit" class="btn btn-info"
               onclick="applyForCarrer(this)">Apply</button>
           </div>            
@@ -480,7 +482,7 @@
 
     </div>
     </section>
-   <section class="mbr-section mbr-section-small" id="testimonials1-d" data-rv-view="42" style="background-color: rgb(255, 255, 255); padding-top: 4.5rem; padding-bottom: 4.5rem;">
+   <section class="mbr-section mbr-section-small" id="feedback" data-rv-view="42" style="background-color: rgb(255, 255, 255); padding-top: 4.5rem; padding-bottom: 4.5rem;">
   <div>
          <div class="container">
             <h2 class="mbr-section-title display-2-no-bg text-xs-center">What Our Fantastic Users Say</h2>
@@ -662,7 +664,7 @@
         <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-        <script src="js/jquery.inputfit.js"></script>
+       
   
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0SDFw8GylrVTzbBw8lcgCaFpan2koddA&callback=initMap"></script>
   <script src="assets/app.js/app.js"></script>
@@ -675,7 +677,7 @@
   <script src="assets/dropdown/js/script.min.js"></script>
   <script src="assets/touch-swipe/jquery.touch-swipe.min.js"></script>
   <script src="assets/theme/js/script.js"></script>
-    <script src="assets/jquery-mb-ytplayer/jquery.mb.ytplayer.min.js"></script>
+   
   
         
 
@@ -728,7 +730,7 @@ return ( index != 2 );
   
   
   
-  
-   <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a  href="#home"style="text-align: center;"><i class="mbr-arrow-up-icon"></i></a></div>
+    <input name="animation" type="hidden">
+   <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon"></i></a></div>
   </body>
 </html>
